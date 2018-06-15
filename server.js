@@ -4,9 +4,9 @@ var mongodb = require("mongodb");
 var cors = require("cors");
 var ObjectID = mongodb.ObjectID;
 
-var USER_PROFILES = "profiles";
+var USER_PROFILES = "USER_PROFILES"; //in quotes is the name of the table it goes to/makes
 
-var USER_REVIEWS = "reviews";
+var USER_REVIEWS = "USER_REVIEWS";
 
 var app = express();
 app.use(bodyParser.json());
@@ -58,9 +58,6 @@ app.post("/api/profiles", function(req, res) {
   console.log("adding profile");
   console.log(req.body);
   var newProfile = req.body;
-  if (!req.body.name) {
-    handlError(res, "Invalid Input", "Invalid Input", 400);
-  }
 
   db.collection(USER_PROFILES).insertOne(newProfile, function(err, doc) {
     if (err) {
