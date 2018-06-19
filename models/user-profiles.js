@@ -6,8 +6,8 @@ var UserProfile = new mongoose.Schema({
   dateBirth: Date,
   homeCity: String,
   homeState: String,
-  homeZip: Integer,
-  email: Email,
+  homeZip: Number,
+  email: String,
   password: String,
   interest: String
 });

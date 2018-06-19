@@ -102,7 +102,7 @@ db.once("open", () => {
 });
 
 require("./models/user-profiles");
-var Profile = mongoose.model("Dwarf");
+var Profile = mongoose.model("Profile");
 
 var routes = require("./routes");
 app.use(require("./routes"));
