@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 
 var UserProfile = new mongoose.Schema({
+  nameFirst: String,
   nameLast: String,
   nameUser: String,
   dateBirth: Date,
@@ -12,4 +13,4 @@ var UserProfile = new mongoose.Schema({
   interest: String
 });
 
-mongoose.model("Profile", UserProfile);
+mongoose.model("Profile", UserProfile, "USER_PROFILES");
