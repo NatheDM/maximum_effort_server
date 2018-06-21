@@ -1,5 +1,5 @@
 var router = require("express").Router();
 
-router.use("/profiles", require("./user-profiles"));
+router.use("/profiles", require("./Profile"));
 
 module.exports = router;

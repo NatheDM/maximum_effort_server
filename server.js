@@ -101,7 +101,7 @@ db.once("open", () => {
   console.log("Database synced up.");
 });
 
-require("./models/user-profiles");
+require("./models/Profile");
 var Profile = mongoose.model("Profile");
 
 var routes = require("./routes");
