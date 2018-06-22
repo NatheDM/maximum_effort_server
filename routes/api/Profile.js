@@ -30,6 +30,9 @@ router.post("/", (req, res, next) => {
   prfl.save(err => {
     if (err) console.log(err);
   });
+  return Profile.find().then(prfl => {
+    return res.json(prfl);
+  });
 });
 
 module.exports = router;

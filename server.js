@@ -3,6 +3,7 @@ var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var cors = require("cors");
 var mongoose = require("mongoose");
+
 var ObjectID = mongodb.ObjectID;
 
 var USER_PROFILES = "USER_PROFILES"; //in quotes is the name of the table it goes to/makes
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
-var db;
+//var db;
 
 /* // Connect to the database before starting the application server.
 mongodb.MongoClient.connect(
