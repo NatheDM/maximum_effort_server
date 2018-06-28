@@ -3,7 +3,6 @@ var mongoose = require("mongoose");
 var Profile = mongoose.model("Profile");
 
 router.get("/", (req, res, next) => {
-  // console.log("get profiles");
   return Profile.find().then(prfl => {
     console.log(prfl);
     return res.json(prfl);
@@ -35,7 +34,7 @@ router.post("/", (req, res, next) => {
     interest: req.body.interest
   });
 
-  router.post(":id", (req, res, next) => {
+  /*   router.post(":id", (req, res, next) => {
     let prfl = new Profile({
       nameFirst: req.body.nameFirst,
       nameLast: req.body.nameLast,
@@ -48,7 +47,7 @@ router.post("/", (req, res, next) => {
       password: req.body.password,
       interest: req.body.interest
     });
-  });
+  }); */
 
   console.log(prfl);
 
