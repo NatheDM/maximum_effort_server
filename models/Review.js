@@ -7,6 +7,7 @@ var UserReview = new mongoose.Schema({
   locState: String,
   locStreet: String,
   locZip: Number,
+  locPicture: String,
   reviewBody: String
 });
 

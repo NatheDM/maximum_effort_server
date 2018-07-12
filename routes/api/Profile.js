@@ -49,7 +49,7 @@ router.post("/", (req, res, next) => {
     });
   }); */
 
-  console.log(prfl);
+  // console.log(prfl);
 
   prfl.save(err => {
     if (err) console.log(err);
