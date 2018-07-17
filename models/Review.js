@@ -1,6 +1,8 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const passportLocalMongoose = require("passport-local-mongoose");
 
-var UserReview = new mongoose.Schema({
+var Review = new mongoose.Schema({
   nameUser: String,
   nameLocation: String,
   locCity: String,
@@ -11,4 +13,6 @@ var UserReview = new mongoose.Schema({
   reviewBody: String
 });
 
-mongoose.model("Review", UserReview, "USER_REVIEWS");
+Review.plugin(passportLocalMongoose);
+
+mongoose.model("Review", Review, "USER_REVIEWS");

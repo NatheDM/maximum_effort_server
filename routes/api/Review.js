@@ -4,23 +4,23 @@ var Review = mongoose.model("Review");
 
 router.get("/", (req, res, next) => {
   return Review.find().then(rvw => {
-    console.log(rvw);
+    //console.log(rvw);
     return res.json(rvw);
   });
 });
 
 router.get(":id", (req, res, next) => {
   return Review.find(rvw => {
-    console.log(req.params.id);
+    //console.log(req.params.id);
     return rvw._id == parseInt(req.params.id);
   }).then(rvw => {
-    console.log(res.json(rvw));
+    //console.log(res.json(rvw));
     return res.json(rvw);
   });
 });
 
 router.post("/", (req, res, next) => {
-  console.log(req);
+  //console.log(req);
   let rvw = new Review({
     nameUser: req.body.nameUser,
     nameLocation: req.body.nameLocation,
@@ -28,7 +28,8 @@ router.post("/", (req, res, next) => {
     locState: req.body.locState,
     locStreet: req.body.locStreet,
     locZip: req.body.locZip,
-    reviewBody: req.body.reviewBody
+    reviewBody: req.body.reviewBody,
+    username: res.body.nameUser
   });
 
   /* router.post(":id", (req, res, next) => {
@@ -41,7 +42,7 @@ router.post("/", (req, res, next) => {
     });
   }); */
 
-  console.log(rvw);
+  //console.log(rvw);
 
   rvw.save(err => {
     if (err) console.log(err);

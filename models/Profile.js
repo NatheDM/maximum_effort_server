@@ -1,9 +1,11 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const passportLocalMongoose = require("passport-local-mongoose");
 
-var UserProfile = new mongoose.Schema({
+var Profile = new Schema({
+  nameUser: String,
   nameFirst: String,
   nameLast: String,
-  nameUser: String,
   dateBirth: Date,
   homeCity: String,
   homeState: String,
@@ -13,4 +15,6 @@ var UserProfile = new mongoose.Schema({
   interest: String
 });
 
-mongoose.model("Profile", UserProfile, "USER_PROFILES");
+Profile.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model("Profile", Profile, "USER_PROFILES");
