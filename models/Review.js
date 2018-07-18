@@ -10,7 +10,8 @@ var Review = new mongoose.Schema({
   locStreet: String,
   locZip: Number,
   locPicture: String,
-  reviewBody: String
+  reviewBody: String,
+  center: Object
 });
 
 Review.plugin(passportLocalMongoose);

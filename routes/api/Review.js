@@ -29,7 +29,11 @@ router.post("/", (req, res, next) => {
     locStreet: req.body.locStreet,
     locZip: req.body.locZip,
     reviewBody: req.body.reviewBody,
-    username: res.body.nameUser
+    center: {
+      lat: 33.557732,
+      lng: -111.88928499999997
+    },
+    username: "deputy"
   });
 
   /* router.post(":id", (req, res, next) => {
